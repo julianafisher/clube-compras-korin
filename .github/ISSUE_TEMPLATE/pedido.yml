@@ -2,8 +2,6 @@ name: Pedido – Clube de Compras Korin
 description: Faça seu pedido do Clube de Compras Korin
 title: "Pedido - "
 labels: ["pedido"]
-assignees:
-  - julianafisher
 
 body:
   - type: input
