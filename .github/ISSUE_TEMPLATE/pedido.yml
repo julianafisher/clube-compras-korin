@@ -1,0 +1,57 @@
+name: Pedido – Clube de Compras Korin
+description: Faça seu pedido do Clube de Compras Korin
+title: "Pedido - "
+labels: ["pedido"]
+assignees:
+  - julianafisher
+
+body:
+  - type: input
+    id: nome
+    attributes:
+      label: Nome completo
+      placeholder: Ex: Ellen Rodrigues
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo de pedido
+      options:
+        - Retirada
+        - Entrega
+    validations:
+      required: true
+
+  - type: input
+    id: endereco
+    attributes:
+      label: Endereço (somente para entrega)
+      placeholder: Rua, número, complemento, bairro
+    validations:
+      required: false
+
+  - type: textarea
+    id: itens
+    attributes:
+      label: Itens do pedido
+      description: |
+        Informe no formato:
+        Produto - Quantidade
+
+        Exemplo:
+        Coxa NGMO 1KG - 3
+        File Peito NGMO 600G - 2
+      placeholder: |
+        Produto - Quantidade
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmacao
+    attributes:
+      label: Confirmação
+      options:
+        - label: Confirmo que os dados acima estão corretos
+          required: true
