@@ -68,6 +68,7 @@ function enviarPedido(event) {
   event.preventDefault();
 
   const nome = document.getElementById("nome").value;
+  const telefone = document.getElementById("telefone").value;
   const johreiCenter = document.getElementById("johrei").value;
   const tipoPedido = entregaSelect.value === "entrega" ? "Entrega" : "Retirada";
   const endereco = document.getElementById("endereco").value || "";
@@ -80,12 +81,13 @@ function enviarPedido(event) {
 
   const formData = new FormData();
   formData.append("entry.621146305", nome);
+  formData.append("entry.1330450663", telefone);
   formData.append("entry.601790336", johreiCenter);
   formData.append("entry.1925880808", tipoPedido);
   formData.append("entry.584953114", endereco);
   formData.append("entry.284588275", itens);
 
-  fetch(FORM_URL, {
+  fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLScozibR0X2-GwYH75h-3_HIljxxL1Qrq36bbpoToYvBMzdsgA/formResponse", {
     method: "POST",
     mode: "no-cors",
     body: formData
@@ -95,3 +97,4 @@ function enviarPedido(event) {
   document.getElementById("pedidoForm").reset();
   document.getElementById("total").innerText = "0.00";
 }
+
