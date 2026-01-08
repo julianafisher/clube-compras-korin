@@ -84,8 +84,8 @@ function enviarPedido(event) {
   formData.append("entry.1330450663", telefone);
   formData.append("entry.601790336", johreiCenter);
   formData.append("entry.1925880808", tipoPedido);
-  formData.append("entry.584953114", endereco);
-  formData.append("entry.284588275", itens);
+  formData.append("entry.284588275", endereco);
+  formData.append("entry.584953114", itens);
 
   fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLScozibR0X2-GwYH75h-3_HIljxxL1Qrq36bbpoToYvBMzdsgA/formResponse", {
     method: "POST",
@@ -97,4 +97,5 @@ function enviarPedido(event) {
   document.getElementById("pedidoForm").reset();
   document.getElementById("total").innerText = "0.00";
 }
+
 
