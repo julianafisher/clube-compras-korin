@@ -71,8 +71,12 @@ function enviarPedido(event) {
   const telefone = document.getElementById("telefone").value;
   const johreiCenter = document.getElementById("johrei").value;
   const tipoPedido = entregaSelect.value === "entrega" ? "Entrega" : "Retirada";
-  const endereco = document.getElementById("endereco").value || "";
   const itens = montarItensPedido();
+
+  let endereco = "";
+  if (entregaSelect.value === "entrega") {
+    endereco = document.getElementById("endereco").value;
+  }
 
   if (!itens) {
     alert("Selecione pelo menos um item.");
@@ -84,8 +88,8 @@ function enviarPedido(event) {
   formData.append("entry.1330450663", telefone);
   formData.append("entry.601790336", johreiCenter);
   formData.append("entry.1925880808", tipoPedido);
-  formData.append("entry.284588275", endereco);
-  formData.append("entry.584953114", itens);
+  formData.append("entry.284588275", endereco); // ENDEREÇO
+  formData.append("entry.584953114", itens);    // ITENS
 
   fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLScozibR0X2-GwYH75h-3_HIljxxL1Qrq36bbpoToYvBMzdsgA/formResponse", {
     method: "POST",
@@ -96,6 +100,9 @@ function enviarPedido(event) {
   alert("Pedido enviado com sucesso!");
   document.getElementById("pedidoForm").reset();
   document.getElementById("total").innerText = "0.00";
+  document.getElementById("enderecoBox").style.display = "none";
 }
+
+
 
 
