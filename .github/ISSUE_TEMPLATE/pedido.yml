@@ -1,14 +1,15 @@
 name: Pedido – Clube de Compras Korin
-description: Faça seu pedido do Clube de Compras Korin
+description: Formulário de pedido do Clube de Compras Korin
 title: "Pedido - "
-labels: ["pedido"]
+labels:
+  - pedido
 
 body:
   - type: input
     id: nome
     attributes:
       label: Nome completo
-      placeholder: Ex: Ellen Rodrigues
+      placeholder: Ellen Rodrigues
     validations:
       required: true
 
@@ -34,15 +35,10 @@ body:
     id: itens
     attributes:
       label: Itens do pedido
-      description: |
-        Informe no formato:
-        Produto - Quantidade
-
-        Exemplo:
+      description: "Informe no formato: Produto - Quantidade. Exemplo: Coxa NGMO 1KG - 3"
+      placeholder: |
         Coxa NGMO 1KG - 3
         File Peito NGMO 600G - 2
-      placeholder: |
-        Produto - Quantidade
     validations:
       required: true
 
