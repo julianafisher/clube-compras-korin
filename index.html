@@ -9,20 +9,21 @@
 
 <h1>Clube de Compras – Korin</h1>
 
-<form id="pedidoForm">
+<form id="pedidoForm" onsubmit="enviarPedido(event)">
 
   <label>Nome completo</label>
-  <input type="text" required>
+  <input type="text" id="nome" required>
 
   <label>Telefone / WhatsApp</label>
-  <input type="text" required>
+  <input type="text" id="telefone" required>
+  <!-- telefone fica no site, mas NÃO é enviado ao Google Form por enquanto -->
 
   <label>Johrei Center</label>
-  <select id="center" required>
+  <select id="johrei" required>
     <option value="">Selecione</option>
-    <option>Ipanema/Copacabana</option>
-    <option>Botafogo</option>
-    <option>Laranjeiras</option>
+    <option value="Copacabana/Ipanema">Copacabana/Ipanema</option>
+    <option value="Botafogo">Botafogo</option>
+    <option value="Laranjeiras">Laranjeiras</option>
   </select>
 
   <label>Entrega ou Retirada</label>
@@ -33,7 +34,7 @@
 
   <div id="enderecoBox" style="display:none">
     <label>Endereço para entrega</label>
-    <textarea></textarea>
+    <textarea id="endereco"></textarea>
   </div>
 
   <h2>Produtos</h2>
