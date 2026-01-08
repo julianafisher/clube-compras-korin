@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Clube de Compras – Korin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Clube de Compras – Korin</h1>
+
+<form id="pedidoForm">
+
+  <label>Nome completo</label>
+  <input type="text" required>
+
+  <label>Telefone / WhatsApp</label>
+  <input type="text" required>
+
+  <label>Johrei Center</label>
+  <select id="center" required>
+    <option value="">Selecione</option>
+    <option>Ipanema/Copacabana</option>
+    <option>Botafogo</option>
+    <option>Laranjeiras</option>
+  </select>
+
+  <label>Entrega ou Retirada</label>
+  <select id="entrega">
+    <option value="retirada">Retirada</option>
+    <option value="entrega">Entrega (+ R$ 20,00)</option>
+  </select>
+
+  <div id="enderecoBox" style="display:none">
+    <label>Endereço para entrega</label>
+    <textarea></textarea>
+  </div>
+
+  <h2>Produtos</h2>
+  <div id="produtos"></div>
+
+  <h2>Total: R$ <span id="total">0.00</span></h2>
+
+  <button type="submit">Enviar Pedido</button>
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>
